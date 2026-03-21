@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Pixel Survivor & Brawl Ultra</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="screen-menu" class="screen">
+        <h1 class="pixel-title">PIXEL SURVIVOR</h1>
+        <button onclick="showScreen('screen-levels')">CAMPANHA</button>
+        <button onclick="startInfiniteMode()">MODO INFINITO</button>
+        <button onclick="startBrawlMode()">BRIGA (1VS1)</button>
+        <button onclick="showScreen('screen-status')">RECORDES</button>
+        <img src="gatinho_pixel.png" class="pixel-cat" alt="Gatinho">
+    </div>
+
+    <div id="screen-status" class="screen hidden">
+        <h2>MELHORES PONTUAÇÕES</h2>
+        <div id="status-list"></div>
+        <button onclick="showScreen('screen-menu')">VOLTAR</button>
+    </div>
+
+    <div id="screen-levels" class="screen hidden">
+        <h2>SELECIONE A FASE</h2>
+        <div id="levels-grid" class="grid"></div>
+        <button onclick="showScreen('screen-menu')">VOLTAR</button>
+    </div>
+
+    <div id="screen-game" class="screen hidden">
+        <div class="game-ui">
+            <div class="hud-left">
+                <span id="level-indicator">FASE 1</span>
+                <div id="lives-display">❤️❤️❤️</div>
+                <div id="p1-skill-display" class="skill-text"></div>
+            </div>
+            <div class="hud-center">
+                <span id="timer-display">0:00</span>
+                <div id="energy-container" class="energy-border"><div id="energy-bar"></div></div>
+            </div>
+            <div class="hud-right">
+                <span id="score-display">Pts: 0</span>
+                <div id="p2-lives-display" class="hidden">❤️❤️❤️❤️❤️</div>
+                <div id="p2-skill-display" class="skill-text"></div>
+            </div>
+        </div>
+        <canvas id="gameCanvas" width="800" height="500"></canvas>
+        <div id="pause-menu" class="pause-overlay hidden">
+            <h2>PAUSADO</h2>
+            <button onclick="togglePause()">VOLTAR</button>
+            <button onclick="exitGame()">SAIR</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
